@@ -1,0 +1,12 @@
+[package]
+name = "linked_list"
+version = "0.1.0"
+edition = "2021"
+authors = ["huangbqsky <huangbqsky@gmail.com>"]
+license = "MIT/Apache-2.0"
+readme = "README.md"
+description = "fast linked list, give you a different feeling!"
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+slab = "0.4.7"
