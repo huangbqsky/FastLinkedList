@@ -40,12 +40,12 @@ impl<T> Node<T> {
     }
 }
 
-pub struct LruLinkedList<T> {
+pub struct FastLinkedList<T> {
     map: slab::Slab<NodePtr<T>>,
     hand: Node<T>,
 }
 
-impl<T> Default for LruLinkedList<T> {
+impl<T> Default for FastLinkedList<T> {
     fn default() -> Self {
         let mut r = Self{
             map: Default::default(),
@@ -56,7 +56,7 @@ impl<T> Default for LruLinkedList<T> {
     }
 }
 
-impl<T> LruLinkedList<T> {
+impl<T> FastLinkedList<T> {
     pub fn new() -> Self {
         Self::default()
     }
@@ -346,7 +346,7 @@ impl<T> ExactSizeIterator for IterMut<'_, T> {
 
 impl<T> FusedIterator for IterMut<'_, T> {}
 
-impl<T> IntoIterator for LruLinkedList<T> {
+impl<T> IntoIterator for FastLinkedList<T> {
     type Item = T;
     type IntoIter = IntoIter<T>;
 
@@ -359,7 +359,7 @@ impl<T> IntoIterator for LruLinkedList<T> {
     }
 }
 
-impl<'a, T> IntoIterator for &'a LruLinkedList<T> {
+impl<'a, T> IntoIterator for &'a FastLinkedList<T> {
     type Item = (usize, &'a T);
     type IntoIter = Iter<'a, T>;
 
@@ -368,7 +368,7 @@ impl<'a, T> IntoIterator for &'a LruLinkedList<T> {
     }
 }
 
-impl<'a, T> IntoIterator for &'a mut LruLinkedList<T> {
+impl<'a, T> IntoIterator for &'a mut FastLinkedList<T> {
     type Item = (usize, &'a mut T);
     type IntoIter = IterMut<'a, T>;
 

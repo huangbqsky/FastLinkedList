@@ -1,8 +1,9 @@
-use linked_list::LruLinkedList;
+use linked_list::FastLinkedList;
+
 
 #[test]
 fn test_push_remove() {
-    let mut lur = LruLinkedList::new();
+    let mut lur = FastLinkedList::new();
     let one = lur.push("1".to_string());
     let tow = lur.push("2".to_string());
     let three = lur.push("3".to_string());
@@ -38,7 +39,7 @@ fn test_push_remove() {
 
 #[test]
 fn test_move_front() {
-    let mut lur: LruLinkedList<usize> = LruLinkedList::new();
+    let mut lur: FastLinkedList<usize> = FastLinkedList::new();
 
     let one = lur.push(1);
     lur.move_front(one).unwrap();
@@ -88,7 +89,7 @@ fn test_move_front() {
 
 #[test]
 fn lur_linked_remove_last() {
-    let mut lur: LruLinkedList<usize> = LruLinkedList::new();
+    let mut lur: FastLinkedList<usize> = FastLinkedList::new();
     assert_eq!(lur.remove_last(), None);
     lur.push(1);
     assert_eq!(lur.len(), 1);
@@ -122,7 +123,7 @@ fn lur_linked_remove_last() {
 
 #[test]
 fn test_iter() {
-    let mut lur = LruLinkedList::new();
+    let mut lur = FastLinkedList::new();
     for i in 1..10i32 {
         lur.push(i);
     }
@@ -164,7 +165,7 @@ fn test_iter() {
 
 #[test]
 fn test_iter_mut() {
-    let mut lur = LruLinkedList::new();
+    let mut lur = FastLinkedList::new();
     for i in 1..10i32 {
         lur.push(i);
     }
@@ -216,7 +217,7 @@ fn test_iter_mut() {
 
 #[test]
 fn test_into_iter() {
-    let mut lur = LruLinkedList::new();
+    let mut lur = FastLinkedList::new();
     for i in 1..10i32 {
         lur.push(i);
     }
@@ -225,7 +226,7 @@ fn test_into_iter() {
         println!("value:{value}")
     }
 
-    let mut lur = LruLinkedList::new();
+    let mut lur = FastLinkedList::new();
     for i in 1..10i32 {
         lur.push(i);
     }
