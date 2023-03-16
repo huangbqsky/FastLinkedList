@@ -5,8 +5,14 @@ A Fast Linked List written in Rust 🦀
 
 一个 Rust 实现的高效的链表
 
-
 # 测试
+```
+➜ git clone https://github.com/huangbqsky/FastLinkedList
+➜ cd FastLinkedList
+➜ cargo test
+```
+
+# 运行
 
 ```
 use linked_list::FastLinkedList; 
