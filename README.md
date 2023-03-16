@@ -1,4 +1,12 @@
-A Fast Linked List!
+# FastLinkedList
+
+
+A Fast Linked List written in Rust 🦀
+
+一个 Rust 实现的高效的链表
+
+
+# 使用
 
 ```
 use linked_list::FastLinkedList; 
