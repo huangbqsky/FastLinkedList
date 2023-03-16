@@ -13,6 +13,7 @@ A Fast Linked List written in Rust 🦀
 ```
 
 # 运行
+➜ cargo run
 
 ```
 use linked_list::FastLinkedList; 
